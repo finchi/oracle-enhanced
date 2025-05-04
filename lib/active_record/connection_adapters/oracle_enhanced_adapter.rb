@@ -296,12 +296,12 @@ module ActiveRecord
       end
 
       def supports_fetch_first_n_rows_and_offset?
-        #false
+        true
 
         # TODO: At this point the connection is not initialized yet,
         # so `database_version` raises an error
         #
-        !use_old_oracle_visitor && database_version.first >= 12
+        # !use_old_oracle_visitor && database_version.first >= 12
       end
 
       def supports_datetime_with_precision?
